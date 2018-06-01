@@ -9,7 +9,7 @@ const styleConfig ={
         'button__text'
     ],
     selfTheme: theme,
-    widget: true // tells to use stylesheets and cssStyle styles
+    widget: true // tells to use stylesheets and own cssStyle styles
 };
 
 export default Styler(Button, styleConfig); // TODO: add own styles: from props and static css + variables

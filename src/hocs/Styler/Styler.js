@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styleProvider from 'services/styleProvider';
 
 export default function(Component, stylesConfig) {
     return class Styler extends React.Component {
@@ -8,13 +9,8 @@ export default function(Component, stylesConfig) {
         };
 
         getCssClasses(theme) {
-            // TODO: add reselect
-            // TODO: implement
-            return {
-                container: 'class__container',
-                content: 'class__content',
-                text: 'class__text'
-            }
+            const cssClasses = styleProvider.getCssClasses(theme, stylesConfig);
+            return cssClasses;
         }
 
         render() {
@@ -24,7 +20,7 @@ export default function(Component, stylesConfig) {
             return (
                 <Component
                     {...props}
-                    cssClasses={cssClasses}
+                    theme={cssClasses}
                 />
             );
         };

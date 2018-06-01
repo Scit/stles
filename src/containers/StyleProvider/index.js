@@ -9,9 +9,22 @@ class StyleProvider extends React.Component {
         children: PropTypes.node
     };
 
+    getTheme() {
+        const { store } = this.props;
+        const { branding = {}, globals = {}, stylesheets = {} } = store;
+
+        return {
+            styles: [
+                globals,
+                branding
+            ],
+            stylesheets
+        }
+    };
+
     render() {
         return (
-            <ThemeContext.Provider value={this.props.store}>
+            <ThemeContext.Provider value={this.getTheme()}>
                 {this.props.children}
             </ThemeContext.Provider>
         );

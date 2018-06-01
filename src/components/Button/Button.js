@@ -5,22 +5,22 @@ import './style.css';
 
 export default class Button extends  React.Component {
     static propTypes = {
-        cssClasses: PropTypes.shape({
-            container: PropTypes.string,
-            content: PropTypes.string,
-            text: PropTypes.string
+        theme: PropTypes.shape({
+            button: PropTypes.string,
+            button__content: PropTypes.string,
+            button__text: PropTypes.string
         }),
         children: PropTypes.node
     };
 
     render() {
         const { props } = this;
-        const { cssClasses } = props;
+        const { theme } = props;
 
         const classes = {
-            button: classnames('button', cssClasses.container),
-            content: classnames('button__content', cssClasses.content),
-            text: classnames('button__text', cssClasses.text)
+            button: classnames('button', theme.button),
+            content: classnames('button__content', theme.button__content),
+            text: classnames('button__text', theme.button__text)
         };
 
         return (
