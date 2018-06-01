@@ -1,24 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ThemeContext from 'context/ThemeContext';
+import StoreConnector from 'hocs/StoreConnector';
 
-export default class StyleProvider extends React.Component {
+class StyleProvider extends React.Component {
     static propTypes = {
+        store: PropTypes.object,
         children: PropTypes.node
     };
 
-    constructor(props) {
-        super(props);
-
-        this.state = {
-        }
-    }
-
     render() {
         return (
-            <ThemeContext.Provider value={{}}>
+            <ThemeContext.Provider value={this.props.store}>
                 {this.props.children}
             </ThemeContext.Provider>
         );
     }
 }
+
+export default StoreConnector(StyleProvider);
