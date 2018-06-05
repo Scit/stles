@@ -12,12 +12,17 @@ body,
 
 .pane__left,
 .pane__right {
+    display: flex;
     flex: 1;
     border: 1px solid gray;
 }
 
+.pane__left {
+    justify-content: center;
+    align-items: center;
+}
+
 .pane__right {
-    display: flex;
     flex-direction: column;
 }
 

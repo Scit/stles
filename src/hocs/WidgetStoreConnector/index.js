@@ -2,11 +2,14 @@ import { connect } from 'react-redux';
 
 const mapStateToProps = (state, ownProps) => {
     const { widgets = {} } = state;
+    const properties = {
+        'stylesheets': [],
+        'cssStyle': {},
+        ...widgets[ownProps.id]
+    };
+
     return {
-        properties: widgets[ownProps.id] || {
-            'stylesheets': [],
-            'cssStyle': {}
-        }
+        properties
     }
 };
 

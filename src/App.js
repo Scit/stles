@@ -63,6 +63,15 @@ class App extends Component {
         this.props.resetConfiguration();
     };
 
+    renderButtons() {
+        const { widgets = {} } = this.props.store;
+        return Object.keys(widgets).map(widgetId => {
+            return (
+                <Button id={widgetId} key={widgetId}>Hello</Button>
+            );
+        });
+    }
+
     render() {
         const textAreaClassName = classnames('pane__textarea', {
             'pane__textarea--invalid': this.state.error
@@ -72,7 +81,7 @@ class App extends Component {
             <div className="pane">
                 <div className="pane__left">
                     <StyleProvider>
-                        <Button id={1}>Hello</Button>
+                        {this.renderButtons()}
                     </StyleProvider>
                 </div>
                 <div className="pane__right">
