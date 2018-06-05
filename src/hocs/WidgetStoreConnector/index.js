@@ -5,6 +5,7 @@ const mapStateToProps = (state, ownProps) => {
     const properties = {
         'stylesheets': [],
         'cssStyle': {},
+        'classes': [],
         ...widgets[ownProps.id]
     };
 

@@ -10,15 +10,18 @@ export default class Button extends  React.Component {
             button__content: PropTypes.string,
             button__text: PropTypes.string
         }),
+        properties: PropTypes.shape({
+            classes: PropTypes.array
+        }),
         children: PropTypes.node
     };
 
     render() {
         const { props } = this;
-        const { theme } = props;
+        const { theme, properties } = props;
 
         const classes = {
-            button: classnames('button', theme.button),
+            button: classnames('button', ...properties.classes, theme.button),
             content: classnames('button__content', theme.button__content),
             text: classnames('button__text', theme.button__text)
         };

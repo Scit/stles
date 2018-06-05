@@ -39,7 +39,8 @@
       "stylesheets": ["stylesheet1"],
       "cssStyle": {
         "backgroundColor": "green"
-      }
+      },
+      "classes": ["class1"]
     }
   }
 }
