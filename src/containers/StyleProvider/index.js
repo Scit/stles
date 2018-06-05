@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ThemeContext from 'context/ThemeContext';
-import StoreConnector from 'hocs/StoreConnector';
+import CommonStoreConnector from 'hocs/CommonStoreConnector';
 
 class StyleProvider extends React.Component {
     static propTypes = {
@@ -10,8 +10,8 @@ class StyleProvider extends React.Component {
     };
 
     getTheme() {
-        const { store } = this.props;
-        const { branding = {}, globals = {}, stylesheets = {} } = store;
+        const { styles = {} } = this.props.store;
+        const { branding = {}, globals = {}, stylesheets = {} } = styles;
 
         return {
             styles: [
@@ -31,4 +31,4 @@ class StyleProvider extends React.Component {
     }
 }
 
-export default StoreConnector(StyleProvider);
+export default CommonStoreConnector(StyleProvider);

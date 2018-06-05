@@ -1,5 +1,3 @@
-export default function(variables) {
-    return ({
-        backgroundColor: variables.primaryColor || 'red'
-    });
-}
+export default {
+    backgroundColor: 'red'
+};

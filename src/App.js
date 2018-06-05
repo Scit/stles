@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import StoreConnector from 'hocs/StoreConnector';
+import CommonStoreConnector from 'hocs/CommonStoreConnector';
 import StyleProvider from 'containers/StyleProvider';
 import Button from 'components/Button';
 import './App.css';
@@ -72,7 +72,7 @@ class App extends Component {
             <div className="pane">
                 <div className="pane__left">
                     <StyleProvider>
-                        <Button>Hello</Button>
+                        <Button id={1}>Hello</Button>
                     </StyleProvider>
                 </div>
                 <div className="pane__right">
@@ -104,4 +104,4 @@ function stringify(object) {
     return JSON.stringify(object, null, 2);
 }
 
-export default StoreConnector(App);
+export default CommonStoreConnector(App);

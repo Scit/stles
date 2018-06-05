@@ -1,33 +1,44 @@
 {
-  "branding": {
-    "button": {
-      "background": "#ee00ee"
-    },
-    "button__content": {
-      "padding": "20px"
-    }
-  },
-
-  "globals": {
-    "button": {
-      "background": "#eeee00"
-    },
-    "button__content": {
-      "padding": "10px"
-    },
-    "button__text": {
-      "color": "orange"
-    }
-  },
-
-  "stylesheets": {
-    "stylesheet1": {
-      "color": "red",
-      "&:hover": {
-        "color": "blue"
+  "styles": {
+    "branding": {
+      "button": {
+        "background": "#ee00ee"
       },
-      "&.class1": {
-        "color": "gray"
+      "button__content": {
+        "padding": "20px"
+      }
+    },
+
+    "globals": {
+      "button": {
+        "background": "#eeee00"
+      },
+      "button__content": {
+        "padding": "10px"
+      },
+      "button__text": {
+        "color": "orange"
+      }
+    },
+
+    "stylesheets": {
+      "stylesheet1": {
+        "color": "red",
+        "&:hover": {
+          "color": "blue"
+        },
+        "&.class1": {
+          "color": "gray"
+        }
+      }
+    }
+  },
+
+  "widgets": {
+    "1": {
+      "stylesheets": ["stylesheet1"],
+      "cssStyle": {
+        "backgroundColor": "green"
       }
     }
   }
